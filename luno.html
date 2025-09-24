@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Luno - Large Cap Bundle</title>
+  <meta name="description" content="Case study on designing the Large Cap Bundle at Luno.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = stored !== null ? stored : (prefersDark ? 'dark' : 'light');
+        if (theme === 'dark') document.documentElement.classList.add('dark');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Floating Sticky Nav (persistent) -->
+  <div class="nav-stick">
+    <div class="container-600 nav-center" style="padding: 0 1rem;">
+      <div class="nav-pill">
+        <!-- Home icon -->
+        <a class="home-btn" href="./index.html" aria-label="Home">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12l9-9 9 9"></path>
+            <path d="M9 21V9h6v12"></path>
+          </svg>
+        </a>
+
+        <!-- Projects -->
+        <details>
+          <summary>Projects
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:.7;">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </summary>
+          <div class="nav-dropdown">
+            <a href="./spot.html"><strong>Spot</strong> - Meme-coin App</a>
+            <a href="./luno.html"><strong>Luno</strong> - Large Cap Bundle</a>
+            <a href="./tradeteq.html"><strong>Tradeteq</strong> - Design System</a>
+          </div>
+        </details>
+        <!-- Theme toggle (single line icon, no border) -->
+        <button id="themeToggle" class="nav-icon-btn" aria-label="Toggle theme" title="Toggle theme (T)">
+          <!-- Sun (outline) -->
+          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+          <!-- Moon (outline) -->
+          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Case Study Content -->
+  <main class="container-600" style="padding: 5.5rem 1rem 3rem;">
+    <div class="case-logo-wrap">
+      <a class="case-logo" href="./index.html" aria-label="Home">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns:xodm="http://www.corel.com/coreldraw/odm/2003" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 2500 2500" style="enable-background:new 0 0 2500 2500;" xml:space="preserve">
+<style type="text/css">
+  .st0{fill:none;}
+  .st1{fill:#A9CBEC;}
+  .st2{fill:#77A2D6;}
+  .st3{fill:#406CB2;}
+  .st4{fill:#323D79;}
+</style>
+<g id="Layer_x0020_1">
+  <rect y="0" class="st0" width="2500" height="2500"></rect>
+  <g id="_2806269770688">
+    <path class="st1" d="M1250,2231c-377,0-683-306-683-683s306-683,683-683s683,306,683,683S1627,2231,1250,2231z M1250,597    c-526,0-952,426-952,952s426,952,952,952s952-426,952-952S1776,597,1250,597z"></path>
+    <path class="st2" d="M1250,2030c-377,0-683-306-683-683s306-683,683-683s683,306,683,683S1627,2030,1250,2030z M1250,396    c-526,0-952,426-952,952s426,952,952,952s952-426,952-952S1776,396,1250,396z"></path>
+    <path class="st3" d="M1250,1828c-377,0-683-306-683-683s306-683,683-683s683,306,683,683S1627,1828,1250,1828z M1250,194    c-526,0-952,426-952,952s426,952,952,952s952-426,952-952S1776,194,1250,194z"></path>
+    <path class="st4" d="M1250,1628c-377,0-683-305-683-680c0-376,306-680,683-680s683,304,683,680S1627,1628,1250,1628z M1250,0    C724,0,298,424,298,948s426,948,952,948s952-424,952-948S1776,0,1250,0z"></path>
+  </g>
+</g>
+</svg>
+
+      </a>
+    </div>
+    <h1>Luno</h1>
+      <p class="light text-14 no-margin">Designing a Meme-coin Trading App</p>
+      <p class="light text-14 mb-12">2022 - 2023</p>
+
+  <h2>The Challenge</h2>
+  <p class="text-14">
+    I joined as the Large Cap Bundle feature was taking shape in its early phase. The idea was to let customers invest 
+    in a diversified basket of top cryptocurrencies in one click — simple in concept, but harder in practice.
+  </p>
+  <ul class="list-text">
+    <li><strong>User understanding:</strong> Many struggled to grasp what a “bundle” was and how it differed from buying coins individually.</li>
+    <li><strong>Transparency:</strong> Users needed confidence in how their money was being allocated and how weightings worked.</li>
+    <li><strong>Reducing friction:</strong> The flow had to feel easy and familiar, but without oversimplifying or hiding details.</li>
+    <li><strong>My role:</strong> Collaborated with a copywriter, an external UX research agency, and developers to plan research, iterate designs, and build the feature.</li>
+  </ul>
+  <p class="text-14 mt-6 italic">
+<strong>Note:</strong> Due to confidentiality, the full case study isn’t public. I’d be happy to walk through my process 
+    and final designs in a private conversation.
+  </p>
+
+    <p class="mt-12"><a href="./index.html" class="text-14">← Back to home</a></p>
+  </main>
+
+  <footer class="container-600 left">
+    <p id="footerText">© 2025. Built with too much coffee ☕ and not enough sleep 😅</p>
+  </footer>
+
+  <!-- After-footer spacer -->
+  <div class="page-spacer"></div>
+
+<script>
+  (function () {
+    // ===================
+    // Theme toggle
+    // ===================
+    var btn = document.getElementById('themeToggle');
+    function setTheme(next){
+      var r=document.documentElement;
+      if(next==='dark'){ r.classList.add('dark'); } else { r.classList.remove('dark'); }
+      try{ localStorage.setItem('theme', next); }catch(_){}
+    }
+    if(btn){
+      btn.addEventListener('click', function(){
+        var dark = document.documentElement.classList.contains('dark');
+        setTheme(dark ? 'light' : 'dark');
+      });
+    }
+
+    // ===================
+    // Footer fun lines
+    // ===================
+    var lines=[
+      "© 2025. Built with too much coffee ☕ and not enough sleep 😅",
+      "© 2025. Made by hand, like sourdough 🍞",
+      "© 2025. Designed in London, debugged everywhere 🌍",
+      "© 2025. Warning: may contain traces of memes 🐸",
+      "© 2025. Crafted with pixels, passion, and a bit of chaos 🎨"
+    ];
+    var ft=document.getElementById('footerText');
+    if(ft){
+      ft.textContent = lines[Math.floor(Math.random()*lines.length)];
+    }
+
+    // ===================
+    // NEW: Close <details> dropdown on click outside / Escape
+    // ===================
+    function closeOpenDetailsOnClickOutside(e) {
+      var openDetails = document.querySelectorAll('details[open]');
+      openDetails.forEach(function (d) {
+        if (!d.contains(e.target)) {
+          d.removeAttribute('open');
+        }
+      });
+    }
+
+    function closeOpenDetailsOnEscape(e) {
+      if (e.key === 'Escape' || e.key === 'Esc') {
+        document.querySelectorAll('details[open]').forEach(function (d) {
+          d.removeAttribute('open');
+        });
+      }
+    }
+
+    document.addEventListener('click', closeOpenDetailsOnClickOutside, { passive: true });
+    document.addEventListener('touchstart', closeOpenDetailsOnClickOutside, { passive: true });
+    document.addEventListener('keydown', closeOpenDetailsOnEscape, { passive: true });
+
+    // Prevent click on <summary> from bubbling up
+    document.querySelectorAll('details > summary').forEach(function (s) {
+      s.addEventListener('click', function (ev) {
+        ev.stopPropagation();
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
