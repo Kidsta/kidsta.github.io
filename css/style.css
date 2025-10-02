@@ -1,9 +1,20 @@
 :root {
-  /* Dark theme defaults */
-  --bg: #0f0f0f;
-  --text: #e5e7eb;
+  /* Light theme defaults */
+  --bg: #FCFCFC;
+  --text: #111827;
+  --text-light: #6b7280;
+  --border: #e5e7eb;    /* was #2c2c2c */
+  --card-bg: #ffffff;
+  --link: #60a5fa;
+  --link-hover: #93c5fd;
+}
+
+/* Dark theme overrides */
+.dark {
+  --bg: #111827;
+  --text: #f3f4f6;
   --text-light: #9ca3af;
-  --border: #2c2c2c;
+  --border: #374151;    /* subtle dark border */
   --card-bg: #1a1a1a;
   --link: #60a5fa;
   --link-hover: #93c5fd;
@@ -299,19 +310,40 @@ footer { font-size:14px; color:#6b7280; margin-top:80px; padding-bottom:24px; }
 .center { text-align: center; }
 .left { text-align: left; }
 
-/* ---------- Lightbox (fade in/out) ---------- */
+/* ---------- Screenshot Blocks & Lightbox ---------- */
+.shot-block {
+  margin-top: 1.5rem;
+}
+
+.screenshot {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border); /* subtle in both themes */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06); /* soft shadow instead of harsh border */
+}
+
+.caption {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: .5rem;
+  text-align: left;
+}
+
+/* Lightbox overlay */
 .lightbox-overlay {
   position: fixed;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,.8);
+  background: rgba(0,0,0,0.8);
   z-index: 1000;
   opacity: 0;
   pointer-events: none;
   transition: opacity .25s ease;
-  cursor: zoom-out;              /* click anywhere to close */
+  cursor: zoom-out;
 }
 .lightbox-overlay.active {
   opacity: 1;
