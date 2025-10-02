@@ -20,6 +20,12 @@
 </head>
 <body>
 
+  <!-- Lightbox Overlay -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img" alt="">
+</div>
+
   <!-- Floating Sticky Nav (persistent) -->
   <div class="nav-stick">
     <div class="container-600 nav-center" style="padding: 0 1rem;">
@@ -70,17 +76,28 @@
         </svg>
       </a>
     </div>
-    <h1>Spot</h1>
-      <p class="light text-14 no-margin">Designing a Memecoin Trading App</p>
-      <p class="light text-14 mb-12">2024 - 2025</p>
+<h1>Spot</h1>
+<p class="text-14 muted no-margin">Role &amp; Scope: Lead Product Designer — iOS + Web, 0→1 launch</p>
+<p class="light text-14 no-margin">Designing a Memecoin Trading App</p>
+<p class="light text-14 mb-12">2024 - 2025</p>
+
+    <!-- NEW: Highlights (TL;DR) -->
+    <section class="mt-16">
+      <h2>Highlights</h2>
+      <ul class="list-text">
+        <li><strong>0→1 launch:</strong> Designed and shipped Spot, a meme-coin trading app across iOS and web.</li>
+        <li><strong>Design system:</strong> Built tokens and components that unified mobile + desktop builds.</li>
+        <li><strong>Trading success:</strong> Reduced failed trades by introducing a user-controlled slippage setting.</li>
+        <li><strong>Growth features:</strong> Designed referrals and social posting to boost engagement and retention.</li>
+      </ul>
+    </section>
 
     <h2>The Challenge</h2>
     <p>Joining Spot mid-flight, I was tasked with refining an early-stage, fast-paced startup design into a more mature product. The initial goal was to make memecoin trading as intuitive as buying Bitcoin on Coinbase, focusing on a simple happy path. My challenge was to handle the complex edges and ensure the product felt familiar and easy.</p>
 
-
     <div style="display:grid; gap: 2rem; margin-top: 1.5rem;">
       <div>
-        <img src="assets/thechallenage.png" alt="Slippage Control UI" class="screenshot">
+        <img src="assets/thechallenage.png" alt="Inherited iOS designs" class="screenshot">
         <p class="caption">Inherited iOS designs</p>
       </div>
     </div>
@@ -89,15 +106,15 @@
     <p>I kept things lean and user-focused, using a tight feedback loop with a small group of testers. Rather than reinventing the wheel, we embraced familiar design patterns that users already knew from other finance apps. I also tailored our design system, adding Figma variables to ensure consistency, speed and cohesion across web and iOS.</p>
 
     <h2>The Process</h2>
-  <p class="text-14">
-    Different tools for different levels of certainty move fast where known, validate where unknown.
-  </p>
-  <ul class="list-text">
-    <li><strong>User feedback:</strong> Regular check-ins with 6–10 testers to ground decisions.</li>
-    <li><strong>Wireframing & prototyping:</strong> Quick prototypes where unknowns were larger to validate and improve early.</li>
-    <li><strong>Design system:</strong> Cleaned and refit the off-the-shelf system; introduced variables and reusable components for web + iOS.</li>
-    <li><strong>Data logs:</strong> Tracked drop-offs, failures, and friction in onramp/trading to guide iterations.</li>
-  </ul>
+    <p class="text-14">
+      Different tools for different levels of certainty — move fast where known, validate where unknown.
+    </p>
+    <ul class="list-text">
+      <li><strong>User feedback:</strong> Regular check-ins with 6–10 testers to ground decisions.</li>
+      <li><strong>Wireframing & prototyping:</strong> Quick prototypes where unknowns were larger to validate and improve early.</li>
+      <li><strong>Design system:</strong> Cleaned and refit the off-the-shelf system; introduced variables and reusable components for web + iOS.</li>
+      <li><strong>Data logs:</strong> Tracked drop-offs, failures, and friction in onramp/trading to guide iterations.</li>
+    </ul>
 
     <div style="display:grid; gap: 2rem; margin-top: 1.5rem;">
       <div>
@@ -107,66 +124,67 @@
     </div>
     <div style="display:grid; gap: 2rem; margin-top: 1.5rem;">
       <div>
-        <img src="assets/wireframes.png" alt="wirefranes" class="screenshot">
-        <p class="caption">Wireframing new idea</p>
+        <img src="assets/wireframes.png" alt="Wireframing new ideas" class="screenshot">
+        <p class="caption">Wireframing new ideas</p>
       </div>
     </div> 
 
-   <h2 class="text-16 font-bold mb-6">Data & Signal</h2>
-  <p class="text-14 mb-4">
-    We kept an eye on both data and signals to stay honest about whether our work was actually improving the experience. 
-    For new or uncertain features, prototypes gave us early validation and quick ways to improve before shipping. 
-    Once live, we leaned on data logs to understand where users were getting stuck.
-  </p>
-<ul class="list-text">
-  <li><strong>Failure rates:</strong> Monitored where transactions failed or timed out.</li>
-  <li><strong>Friction points:</strong> Tracked steps that slowed users down in the onramp and trading flows.</li>
-  <li><strong>User feedback:</strong> Regular check-ins with a small panel of testers.</li>
-</ul>
-<p class="text-14 mt-4">
-  One key signal we tracked was <em>trade failure due to price movement</em>. Meme-coins move fast, and often by the time a user confirmed, the
-  quoted price had already changed. To address this, we introduced a <strong>slippage control</strong> that let users set their own tolerance levels.
-  This gave trades a greater chance of completing successfully while giving users control over how much risk they were willing to accept.
-</p>
+    <h2 class="text-16 font-bold mb-6">Data & Signal</h2>
+    <p class="text-14 mb-4">
+      We kept an eye on both data and signals to stay honest about whether our work was actually improving the experience. 
+      For new or uncertain features, prototypes gave us early validation and quick ways to improve before shipping. 
+      Once live, we leaned on data logs to understand where users were getting stuck.
+    </p>
+    <ul class="list-text">
+      <li><strong>Failure rates:</strong> Monitored where transactions failed or timed out.</li>
+      <li><strong>Friction points:</strong> Tracked steps that slowed users down in the onramp and trading flows.</li>
+      <li><strong>User feedback:</strong> Regular check-ins with a small panel of testers.</li>
+    </ul>
+    <p class="text-14 mt-4">
+      One key signal we tracked was <em>trade failure due to price movement</em>. Meme-coins move fast, and often by the time a user confirmed, the
+      quoted price had already changed. To address this, we introduced a <strong>slippage control</strong> that let users set their own tolerance levels.
+      This gave trades a greater chance of completing successfully while giving users control over how much risk they were willing to accept.
+    </p>
 
     <div style="display:grid; gap: 2rem; margin-top: 1.5rem;">
       <div>
-        <img src="assets/slippage.png" alt="slippage" class="screenshot">
-        <p class="caption">slippage control UI</p>
+        <img src="assets/slippage.png" alt="Slippage control UI" class="screenshot">
+        <p class="caption">Slippage control UI</p>
       </div>
     </div> 
 
+    <h2>Real-World Working</h2>
+    <p class="text-14">
+      Day-to-day was a juggling act: close with Head of Product and engineers, switching between iOS and desktop, and keeping designs just ahead of development.
+    </p>
+    <ul class="list-text">
+      <li><strong>Design–dev pairing:</strong> Clarified tricky states (timeouts, slippage, failed swaps) before rework.</li>
+      <li><strong>Multiple tracks:</strong> New features, improvements, and system work in the same sprint.</li>
+      <li><strong>Clear handoffs:</strong> Simple, precise specs; always available to unblock quickly.</li>
+      <li><strong>Platform parity:</strong> Shared mental model with platform-native patterns for each UI.</li>
+    </ul>
 
-   <h2>Real-World Working</h2>
-  <p class="text-14">
-    Day-to-day was a juggling act: close with Head of Product and engineers, switching between iOS and desktop, and keeping designs just ahead of development.
-  </p>
-  <ul class="list-text">
-    <li><strong>Design–dev pairing:</strong> Clarified tricky states (timeouts, slippage, failed swaps) before rework.</li>
-    <li><strong>Multiple tracks:</strong> New features, improvements, and system work in the same sprint.</li>
-    <li><strong>Clear handoffs:</strong> Simple, precise specs; always available to unblock quickly.</li>
-    <li><strong>Platform parity:</strong> Shared mental model with platform-native patterns for each UI.</li>
-  </ul>
+    <h2>Outcome</h2>
+    <p class="text-14">
+      Launched on desktop and iOS; attracted hundreds of users; iterated quickly to stay competitive and trustworthy.
+    </p>
+    <ul class="list-text">
+      <li><strong>Adoption:</strong> Smooth onboarding; strong qualitative feedback on clarity.</li>
+      <li><strong>Less friction:</strong> Lower failure rates; faster task completion in core flows.</li>
+      <li><strong>Cross-platform consistency:</strong> Users could switch devices without relearning.</li>
+      <li><strong>System fit-for-purpose:</strong> Leaner components and tokens sped up delivery.</li>
+    </ul>
 
-   <h2>Outcome</h2>
-  <p class="text-14">
-    Launched on desktop and iOS; attracted hundreds of users; iterated quickly to stay competitive and trustworthy.
-  </p>
-  <ul class="list-text">
-    <li><strong>Adoption:</strong> Smooth onboarding; strong qualitative feedback on clarity.</li>
-    <li><strong>Less friction:</strong> Lower failure rates; faster task completion in core flows.</li>
-    <li><strong>Cross-platform consistency:</strong> Users could switch devices without relearning.</li>
-    <li><strong>System fit-for-purpose:</strong> Leaner components and tokens sped up delivery.</li>
-  </ul>
-
-  <!-- Optional polished UI screenshots -->
+    <!-- Optional polished UI screenshots -->
     <div style="display:grid; gap: 2rem; margin-top: 1.5rem;">
       <div>
-        <img src="assets/spotfinal-1.png" alt="Spot app" class="screenshot">
+          <a href="assets/spotfinal-1.png" class="lightbox">
+            <img src="assets/spotfinal-1.png" alt="Spot app" class="screenshot">
+          </a>
         <p class="caption">Screenshots of the live app</p>
       </div>
     </div> 
-        <div style="display:grid; gap: 2rem; margin-top: 1.5rem;">
+    <div style="display:grid; gap: 2rem; margin-top: 1.5rem;">
       <div>
         <img src="assets/spotfinal-2.png" alt="Spot app" class="screenshot">
         <p class="caption">Screenshots of the live app</p>
@@ -216,7 +234,7 @@
     }
 
     // ===================
-    // NEW: Close <details> dropdown on click outside / Escape
+    // Close <details> on click outside / Escape
     // ===================
     function closeOpenDetailsOnClickOutside(e) {
       var openDetails = document.querySelectorAll('details[open]');
@@ -247,6 +265,49 @@
     });
   })();
 </script>
+<script>
+(function () {
+  var overlay = document.createElement('div');
+  overlay.className = 'lightbox-overlay';
+  overlay.innerHTML = '<img src="" alt="">';
+  document.body.appendChild(overlay);
+
+  var img = overlay.querySelector('img');
+
+  function openLightbox(src) {
+    img.src = src;
+    overlay.classList.add('active');
+  }
+
+  function closeLightbox() {
+    // play fade-out on the image first
+    overlay.classList.add('closing');
+    img.addEventListener('transitionend', function onEnd() {
+      img.removeEventListener('transitionend', onEnd);
+      overlay.classList.remove('active', 'closing');
+      img.src = '';
+    }, { once: true });
+  }
+
+  // Activate on any <a class="lightbox" href="large.png"><img ...></a>
+  document.querySelectorAll('a.lightbox').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      openLightbox(this.href);
+    });
+  });
+
+  // Click anywhere to close
+  overlay.addEventListener('click', closeLightbox);
+
+  // Optional: Esc to close
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+})();
+</script>
+
+
 
 </body>
 </html>

@@ -1,12 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Tradeteq — SaaS/Design system</title>
-  <meta name="description" content="Case study on building a design system at Tradeteq.">
+  <title>Tradeteq - Design System & Critical Flows</title>
+  <meta name="description" content="How I built a design system and improved critical flows at Tradeteq." />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Theme boot -->
   <script>
     (function () {
       try {
@@ -17,6 +19,41 @@
       } catch (e) {}
     })();
   </script>
+
+  <!-- Embedded Lightbox CSS (fade in/out) and full-width image helpers -->
+  <style>
+    /* Lightbox */
+    .lightbox-overlay {
+      position: fixed; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(0,0,0,.8);
+      z-index: 1000;
+      opacity: 0; pointer-events: none;
+      transition: opacity .25s ease;
+      cursor: zoom-out;
+    }
+    .lightbox-overlay.active { opacity: 1; pointer-events: auto; }
+    .lightbox-overlay img {
+      max-width: 90vw; max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.3);
+      opacity: 0; transform: scale(.98);
+      transition: opacity .25s ease, transform .25s ease;
+    }
+    .lightbox-overlay.active img { opacity: 1; transform: scale(1); }
+    .lightbox-overlay.closing img { opacity: 0; transform: scale(.98); }
+
+    /* Ensure screenshots are full width inside the 600px container */
+    .shot-block { margin-top: 1.5rem; }
+    .screenshot {
+      display: block; width: 100%; height: auto;
+      border-radius: 12px; border: 1px solid var(--border);
+    }
+    .caption {
+      font-size: 12px; color: var(--text-light);
+      margin-top: .5rem; text-align: left;
+    }
+  </style>
 </head>
 <body>
 
@@ -24,11 +61,10 @@
   <div class="nav-stick">
     <div class="container-600 nav-center" style="padding: 0 1rem;">
       <div class="nav-pill">
-        <!-- Home icon -->
+        <!-- Home -->
         <a class="home-btn" href="./index.html" aria-label="Home">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 12l9-9 9 9"></path>
-            <path d="M9 21V9h6v12"></path>
+            <path d="M3 12l9-9 9 9"></path><path d="M9 21V9h6v12"></path>
           </svg>
         </a>
 
@@ -40,19 +76,18 @@
             </svg>
           </summary>
           <div class="nav-dropdown">
-            <a href="./spot.html">Spot — Meme-coin App</a>
-            <a href="./luno.html">Luno — Large Cap Bundle</a>
-            <a href="./tradeteq.html">Tradeteq — Design System</a>
+            <a href="./spot.html"><strong>Spot</strong> - Memecoin App</a>
+            <a href="./luno.html"><strong>Luno</strong> - Large Cap Bundle</a>
+            <a href="./tradeteq.html"><strong>Tradeteq</strong> - Design System</a>
           </div>
         </details>
-        <!-- Theme toggle (single line icon, no border) -->
+
+        <!-- Theme toggle -->
         <button id="themeToggle" class="nav-icon-btn" aria-label="Toggle theme" title="Toggle theme (T)">
-          <!-- Sun (outline) -->
           <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="4"></circle>
             <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
           </svg>
-          <!-- Moon (outline) -->
           <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
@@ -61,104 +96,222 @@
     </div>
   </div>
 
-  <!-- Case Study Content -->
+  <!-- Case Study -->
   <main class="container-600" style="padding: 5.5rem 1rem 3rem;">
-    <h1>Tradeteq - SaaS / Design System</h1>
+    <h1>Tradeteq</h1>
+    <p class="text-14 muted no-margin">Role &amp; Scope: Senior Product Designer — Design system + critical flows</p>
+    <p class="light text-14 no-margin">Making multiple products feel like one</p>
     <p class="light text-14 mb-12">2023 – 2024</p>
 
-  <h2>The Challenge</h2>
-  <p class="text-14">
-    At Tradeteq, my role shifted depending on where design support was needed most. The main challenge was that the company had 
-    multiple internal and client-facing platforms, all built at different times with little long-term planning. The result was 
-    a fragmented experience with no unifying design language.
-  </p>
-  <ul class="list-text">
-    <li><strong>Lack of consistency:</strong> Each platform had its own look and feel, making the ecosystem disjointed.</li>
-    <li><strong>No design system:</strong> Components were duplicated, inconsistent, or unused across products.</li>
-    <li><strong>Ad-hoc workflows:</strong> New components were often created in isolation without clear approval or governance.</li>
-    <li><strong>My role:</strong> Audited all existing components and products, consolidated them into a unified design system, 
-      and introduced a process for approving and maintaining new components. I also supported product teams with day-to-day 
-      design needs for niche client features.</li>
-  </ul>
-  <p class="text-14 mt-6">
-    <strong>Note:</strong> Full case study coming soon.
-  </p>
+    <!-- Highlights -->
+    <section class="mt-16">
+      <h2>Highlights</h2>
+      <ul class="list-text">
+        <li><strong>Design system:</strong> Built tokens (color, type, spacing) and core components used across products.</li>
+        <li><strong>Rollout plan:</strong> Introduced components sprint-by-sprint with Storybook entries and deprecation notes.</li>
+        <li><strong>Critical flows:</strong> Redesigned the due diligince form to be clearer and faster.</li>
+        <li><strong>Collaboration:</strong> Worked with the lead FE to align naming, states, and usage guidelines.</li>
+      </ul>
+    </section>
 
-    <p class="mt-12"><a href="./index.html" class="text-14">← Back to Portfolio</a></p>
+    <!-- Challenge -->
+    <section class="mt-16">
+      <h2>The Challenge</h2>
+      <p class="text-14">
+        Products were built in isolation over time. The same “primary blue” appeared in five shades. Buttons were recreated per app.
+        Screens were sometimes “designed over” screenshots and handed to devs. There was no shared source of truth and no way to keep
+        things consistent across client-branded versions. My job: create a usable system and improve the flows that matter most.
+      </p>
+      <ul class="list-text">
+        <li><strong>Fragmented UI:</strong> each product looked and behaved differently.</li>
+        <li><strong>Duplicate components:</strong> multiple versions of the “same” button/input.</li>
+        <li><strong>Slow, confusing flows:</strong> especially the long, single-page due diligince setup.</li>
+      </ul>
+
+      <div class="shot-block">
+        <a href="assets/tradeteq-inconsistent.png" class="lightbox" aria-label="Open larger">
+          <img src="assets/tradeteq-inconsistent.png" alt="Inconsistent UI examples" class="screenshot">
+        </a>
+        <p class="caption">Mismatched buttons/colors from different parts of the product.</p>
+      </div>
+
+      <div class="shot-block">
+        <a href="assets/tradeteq_existing.png" class="lightbox" aria-label="Open larger">
+          <img src="assets/tradeteq_existing.png" alt="Inconsistent UI examples" class="screenshot">
+        </a>
+        <p class="caption">Existing UI — branding inconsistent with website and marketing.</p>
+      </div>
+      <div class="shot-block">
+        <a href="assets/tradeteq_existing_2.png" class="lightbox" aria-label="Open larger">
+          <img src="assets/tradeteq_existing_2.png" alt="Inconsistent UI examples" class="screenshot">
+        </a>
+        <p class="caption">Existing UI - CTA's not aligned with form</p>
+      </div>
+    </section>
+
+    <!-- Approach -->
+    <section class="mt-16">
+      <h2>The Approach</h2>
+      <ul class="list-text">
+        <li><strong>Audit → Roadmap:</strong> Ran a quick audit, then shaped a design roadmap from the findings.</li>
+        <li><strong>Start with tokens:</strong> set color ramps, typography scale, spacing, radii - the basics everyone shares.</li>
+        <li><strong>Ship core, then layer:</strong> shipped buttons/inputs first; added more complex patterns in later sprints.</li>
+        <li><strong>Storybook as the source:</strong> each new component added with notes; old variants marked for deprecation.</li>
+        <li><strong>Hands-on pairing:</strong> worked with the lead FE on names, states, and do/don’t examples.</li>
+        <li><strong>Improve a critical flow:</strong> used the due diligince setup form as a proving ground for the system.</li>
+      </ul>
+
+      <div class="shot-block">
+        <a href="assets/tradeteq_variables.png" class="lightbox" aria-label="Open larger">
+          <img src="assets/tradeteq_variables.png" alt="Tokens: color, type, spacing" class="screenshot">
+        </a>
+        <p class="caption">Examples: Token page with color ramps, type scale, spacing grid.</p>
+      </div>
+
+      <div class="shot-block">
+        <a href="assets/tradeteq_components.png" class="lightbox" aria-label="Open larger">
+          <img src="assets/tradeteq_components.png" alt="Core components gallery" class="screenshot">
+        </a>
+        <p class="caption">Examples: buttons/inputs, icons, tags</p>
+      </div>
+    </section>
+
+    <!-- Constraints -->
+    <section class="mt-16">
+      <h2>Constraints</h2>
+      <p class="text-14">
+        Direct customer feedback wasn’t available. Most input came via BAs. Developers had limited product context,
+        so edge cases surfaced late. I leaned on prior fintech experience and quick prototypes to keep changes sensible,
+        and kept components flexible so the team could refine them over time.
+      </p>
+    </section>
+
+    <!-- Critical Flow -->
+    <section class="mt-16">
+      <h2>Critical Flow - Due Diligince Setup</h2>
+      <p class="text-14">
+        The original form copied a paper version: everything on one page, no conditional fields, no sections.
+        I split it into clear steps, showed document requirements upfront, and used inline validation. 
+      </p>
+
+      <div class="shot-block">
+        <a href="assets/tradeteq-form-before.png" class="lightbox" aria-label="Open larger">
+          <img src="assets/tradeteq-form-before.png" alt="Before — long, single-page form" class="screenshot">
+        </a>
+        <p class="caption">Before: dense, single page with no guidance or conditional logic.</p>
+      </div>
+
+      <div class="shot-block">
+        <a href="assets/tradeteq-form-after.png" class="lightbox" aria-label="Open larger">
+          <img src="assets/tradeteq-form-after.png" alt="After — sectioned flow with guidance" class="screenshot">
+        </a>
+        <p class="caption">After: sectioned flow, document checklist upfront, visual drag-and-drop upload area</p>
+      </div>
+    </section>
+
+    <!-- Outcome -->
+    <section class="mt-16">
+      <h2>Outcome</h2>
+      <ul class="list-text">
+        <li><strong>Adoption began:</strong> tokens and early components landed in Storybook and started replacing legacy UI.</li>
+        <li><strong>Faster completion:</strong> due diligince time dropped from ~55 mins to ~25 mins.</li>
+        <li><strong>Less duplication:</strong> a simple review + deprecation path stopped one-off component copies.</li>
+        <li><strong>Set up to scale:</strong> as new front ends were built, the system became the default starting point.</li>
+      </ul>
+
+      <div class="shot-block">
+        <a href="assets/tradeteq-in-use.png" class="lightbox" aria-label="Open larger">
+          <img src="assets/tradeteq-in-use.png" alt="Early UI using the new system" class="screenshot">
+        </a>
+        <p class="caption">New sreen applied with new tokens and components. </p>
+      </div>
+    </section>
+
+    <p class="mt-12"><a href="./index.html" class="text-14">← Back to home</a></p>
   </main>
 
   <footer class="container-600 left">
     <p id="footerText">© 2025. Built with too much coffee ☕ and not enough sleep 😅</p>
   </footer>
 
-  <!-- After-footer spacer -->
   <div class="page-spacer"></div>
 
-<script>
-  (function () {
-    // ===================
-    // Theme toggle
-    // ===================
-    var btn = document.getElementById('themeToggle');
-    function setTheme(next){
-      var r=document.documentElement;
-      if(next==='dark'){ r.classList.add('dark'); } else { r.classList.remove('dark'); }
-      try{ localStorage.setItem('theme', next); }catch(_){}
-    }
-    if(btn){
-      btn.addEventListener('click', function(){
-        var dark = document.documentElement.classList.contains('dark');
-        setTheme(dark ? 'light' : 'dark');
-      });
-    }
-
-    // ===================
-    // Footer fun lines
-    // ===================
-    var lines=[
-      "© 2025. Built with too much coffee ☕ and not enough sleep 😅",
-      "© 2025. Made by hand, like sourdough 🍞",
-      "© 2025. Designed in London, debugged everywhere 🌍",
-      "© 2025. Warning: may contain traces of memes 🐸",
-      "© 2025. Crafted with pixels, passion, and a bit of chaos 🎨"
-    ];
-    var ft=document.getElementById('footerText');
-    if(ft){
-      ft.textContent = lines[Math.floor(Math.random()*lines.length)];
-    }
-
-    // ===================
-    // NEW: Close <details> dropdown on click outside / Escape
-    // ===================
-    function closeOpenDetailsOnClickOutside(e) {
-      var openDetails = document.querySelectorAll('details[open]');
-      openDetails.forEach(function (d) {
-        if (!d.contains(e.target)) {
-          d.removeAttribute('open');
-        }
-      });
-    }
-
-    function closeOpenDetailsOnEscape(e) {
-      if (e.key === 'Escape' || e.key === 'Esc') {
-        document.querySelectorAll('details[open]').forEach(function (d) {
-          d.removeAttribute('open');
+  <script>
+    (function () {
+      // Theme toggle
+      var btn = document.getElementById('themeToggle');
+      function setTheme(next){
+        var r=document.documentElement;
+        if(next==='dark'){ r.classList.add('dark'); } else { r.classList.remove('dark'); }
+        try{ localStorage.setItem('theme', next); }catch(_){}
+      }
+      if(btn){
+        btn.addEventListener('click', function(){
+          var dark = document.documentElement.classList.contains('dark');
+          setTheme(dark ? 'light' : 'dark');
         });
       }
-    }
 
-    document.addEventListener('click', closeOpenDetailsOnClickOutside, { passive: true });
-    document.addEventListener('touchstart', closeOpenDetailsOnClickOutside, { passive: true });
-    document.addEventListener('keydown', closeOpenDetailsOnEscape, { passive: true });
+      // Footer fun lines
+      var lines=[
+        "© 2025. Built with too much coffee ☕ and not enough sleep 😅",
+        "© 2025. Made by hand, like sourdough 🍞",
+        "© 2025. Designed in London, debugged everywhere 🌍",
+        "© 2025. Warning: may contain traces of memes 🐸",
+        "© 2025. Crafted with pixels, passion, and a bit of chaos 🎨"
+      ];
+      var ft=document.getElementById('footerText');
+      if(ft){ ft.textContent = lines[Math.floor(Math.random()*lines.length)]; }
 
-    // Prevent click on <summary> from bubbling up
-    document.querySelectorAll('details > summary').forEach(function (s) {
-      s.addEventListener('click', function (ev) {
-        ev.stopPropagation();
+      // Close <details> on outside click / Esc
+      function closeOpenDetailsOnClickOutside(e) {
+        document.querySelectorAll('details[open]').forEach(function (d) {
+          if (!d.contains(e.target)) d.removeAttribute('open');
+        });
+      }
+      function closeOpenDetailsOnEscape(e) {
+        if (e.key === 'Escape' || e.key === 'Esc') {
+          document.querySelectorAll('details[open]').forEach(function (d) { d.removeAttribute('open'); });
+        }
+      }
+      document.addEventListener('click', closeOpenDetailsOnClickOutside, { passive: true });
+      document.addEventListener('touchstart', closeOpenDetailsOnClickOutside, { passive: true });
+      document.addEventListener('keydown', closeOpenDetailsOnEscape, { passive: true });
+
+      // Prevent summary click from bubbling
+      document.querySelectorAll('details > summary').forEach(function (s) {
+        s.addEventListener('click', function (ev) { ev.stopPropagation(); });
       });
-    });
-  })();
-</script>
 
+      // ---- Lightbox (click anywhere to close) ----
+      var overlay = document.createElement('div');
+      overlay.className = 'lightbox-overlay';
+      overlay.innerHTML = '<img src="" alt="">';
+      document.body.appendChild(overlay);
+
+      var img = overlay.querySelector('img');
+
+      function openLightbox(src) {
+        img.src = src;
+        overlay.classList.add('active');
+      }
+      function closeLightbox() {
+        overlay.classList.add('closing');
+        img.addEventListener('transitionend', function onEnd() {
+          img.removeEventListener('transitionend', onEnd);
+          overlay.classList.remove('active','closing');
+          img.src = '';
+        }, { once: true });
+      }
+      document.querySelectorAll('a.lightbox').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          openLightbox(this.href);
+        });
+      });
+      overlay.addEventListener('click', closeLightbox);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLightbox(); });
+    })();
+  </script>
 </body>
 </html>
