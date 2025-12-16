@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Spot — Case Study</title>
+  <meta name="description" content="Founding/Lead Product Design for Spot: simplifying trading, cleaning up the system, and working fast with engineering across iOS, Android, and Web." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Theme boot -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = stored !== null ? stored : (prefersDark ? 'dark' : 'light');
+        if (theme === 'dark') document.documentElement.classList.add('dark');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Page-local tweaks (Lightbox + small helpers) -->
+  <style>
+    .tldr-box{ border:1px solid var(--border); border-radius:12px; padding:1.25rem 1rem; background:var(--card-bg); }
+    .tldr-box h2{ margin-top:0; }
+    .dark .tldr-box{ background:#151a22; }
+    .pullquote{ font-size:1.05rem; line-height:1.5; font-weight:600; border-left:4px solid var(--border); padding-left:1rem; margin:1rem 0 .5rem; }
+    .muted-hr{ border:0; border-top:1px solid var(--border); margin:2rem 0; }
+    h3 { font-weight: 600; font-size: 0.95rem; margin: 1rem 0 .25rem; opacity: .9; }
+    .screenshot { display:block; width:100%; height:auto; border-radius:12px; }
+    .caption { font-size:.85rem; opacity:.75; margin:.5rem 0 0; }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Nav -->
+  <div class="nav-stick">
+    <div class="container-800 nav-center" style="padding: 0 rem;">
+      <div class="nav-pill">
+        <a class="home-btn" href="./index.html" aria-label="Home">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12l9-9 9 9"></path><path d="M9 21V9h6v12"></path>
+          </svg>
+        </a>
+
+        <details>
+          <summary>Projects
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:.7;">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </summary>
+          <div class="nav-dropdown">
+            <a href="./spot.html"><strong>Spot</strong> - Meme-coin App</a>
+            <a href="./luno.html"><strong>Luno</strong> - Large Cap Bundle</a>
+            <a href="./tradeteq.html"><strong>Tradeteq</strong> - Design System</a>
+          </div>
+        </details>
+
+        <button id="themeToggle" class="nav-icon-btn" aria-label="Toggle theme" title="Toggle theme (T)">
+          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Case Study -->
+  <main class="container-800" style="padding: 5.5rem 1rem 3rem;">
+        <div class="case-logo-wrap">
+      <a class="case-logo" href="./index.html" aria-label="Home">
+        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.2099 6.41767C10.2099 4.86252 11.4704 3.60167 13.0259 3.60167V0H0V3.60167C1.55516 3.60167 2.81601 4.86252 2.81601 6.41767C2.81601 7.97283 1.55544 9.23368 0 9.23368V12.8353H13.0256V9.23368C11.4704 9.23368 10.2096 7.97283 10.2096 6.41767H10.2099ZM6.51294 9.23368C4.95778 9.23368 3.69693 7.97283 3.69693 6.41767C3.69693 4.86252 4.95778 3.60167 6.51294 3.60167C8.06809 3.60167 9.32895 4.86252 9.32895 6.41767C9.32895 7.97283 8.06809 9.23368 6.51294 9.23368Z" fill="currentColor"/>
+        </svg>
+      </a>
+    </div>
+    <h1>Spot</h1>
+    <p class="text-14 muted no-margin">Role: Founding / Lead Product Designer — iOS, Android (RN) & Web</p>
+    <p class="light text-14 no-margin">Designed for everyday traders who want to buy meme coins as easily as a stock.</p>
+    <p class="light text-14 mb-12">2024 — 2025</p>
+
+    <!-- HERO -->
+    <div class="shot-block">
+      <a href="assets/spot_ios.png" class="lightbox" aria-label="Open larger">
+        <img src="assets/spot_ios.png" alt="Spot across iOS, Android and web" class="screenshot">
+      </a>
+      <p class="caption">Shipped across iOS, Android (React Native), and Web.</p>
+    </div>
+
+    <!-- TL;DR -->
+    <section class="mt-12 tldr-box" role="tldr">
+      <h2>TL;DR</h2>
+      <p class="text-14">
+        I led Spot from internal beta to launch. I fixed wobbly flows, cleaned up an off-the-shelf design system so it matched the real product,
+        and worked closely with PM and engineering. Big wins: a slippage control that cut failed trades from <strong>72% → 26%</strong>, a faster confirmation step
+        (trade time ↓ ~36%, completion ↑ ~18pp), and a <strong>16-week React Native rebuild</strong> that brought Android to parity using shared logic and simple tokens.
+      </p>
+    </section>
+
+    <h2 class="mt-16">The Context — Lots of Interest, Hard to Use</h2>
+    <p class="text-14">
+      Meme-coin trading was exploding — communities could move markets overnight.
+      But for most people, getting started wasn’t easy. Unlike Coinbase or Binance, you couldn’t buy in a few taps.
+      A typical path looked like: deposit USD → convert to USDC → make sure both assets are on the same blockchain before you can buy.
+      People wanted in, but the process felt fragile, confusing, and risky.
+    </p>
+    <p class="pullquote">“Keep crypto’s transparency. Make the experience as simple as buying a stock.”</p>
+
+    <div class="shot-block">
+      <a href="assets/spot-context-before.png" class="lightbox" aria-label="Open larger">
+        <img src="assets/spot-context-before.png" alt="Early internal build" class="screenshot">
+      </a>
+      <p class="caption">Early internal build — core worked; secondary flows were patchy and inconsistent.</p>
+    </div>
+
+    <h2 class="mt-16">Principles — Speed, Clarity, Trust</h2>
+    <p class="text-14">
+      A simple framework I used to keep design decisions consistent — not fixed rules, but a compass that helped the team move quickly without losing clarity.
+    </p>
+    <ul class="list-text">
+      <li><strong>Speed ⚡</strong> — less friction; quicker actions.</li>
+      <li><strong>Clarity 👁️</strong> — screens explain themselves; no jargon.</li>
+      <li><strong>Trust 🛡️</strong> — honest states and predictable behaviour.</li>
+    </ul>
+    <p class="text-14 light">Not every call fits perfectly — the goal was to be intentional about trade-offs.</p>
+
+    <h2 class="mt-16">Start by Seeing the Whole Journey</h2>
+    <h3>What I found</h3>
+    <p class="text-14">A strong core with rough edges: duplicated patterns, mixed typography, unclear errors, and flows that didn’t match what shipped.</p>
+    <h3>What I changed</h3>
+    <p class="text-14">
+      I mapped every screen and flow, from onboarding to trading. We prioritised issues by impact vs. effort and turned them into a shared to-do list.
+      I also ran a FigJam session so the team could agree on what to fix first.
+    </p>
+
+    <div class="shot-block">
+      <a href="assets/spot_heuristic.png" class="lightbox" aria-label="Open larger">
+        <img src="assets/spot_heuristic.png" alt="Review + workshop" class="screenshot">
+      </a>
+      <p class="caption">Review — one clear list of quick wins and bigger fixes.</p>
+    </div>
+
+        <div class="shot-block">
+      <a href="assets/process-1.png" class="lightbox" aria-label="Open larger">
+        <img src="assets/process-1.png" alt="Review + workshop" class="screenshot">
+      </a>
+      <p class="caption">Team workshop</p>
+    </div>
+
+    <h2 class="mt-16">Clean Up the System, Don’t Rebuild It</h2>
+    <h3>The issue</h3>
+    <p class="text-14">
+      The design library mixed a bought-in kit with custom work — and lots we never used. Names didn’t match the code. Tokens weren’t consistent.
+    </p>
+    <h3>What I did</h3>
+    <ul class="list-text">
+      <li>Removed unused and overlapping parts; rebuilt only what we actually shipped.</li>
+      <li>Simplified tokens (colour, spacing, type) and matched them to Tailwind.</li>
+      <li>Wrote clear behaviour for states like loading, error, and disabled.</li>
+      <li>Checked details with engineers on iOS and Android to make sure it felt right.</li>
+    </ul>
+    <p class="pullquote">“Not glamorous work — but it made releases predictable and faster.”</p>
+
+    <div class="shot-block">
+      <a href="assets/spot-tokens-components.png" class="lightbox" aria-label="Open larger">
+        <img src="assets/spot-tokens-components.png" alt="Tokens and shared parts" class="screenshot">
+      </a>
+      <p class="caption">Lean tokens and shared parts — reliable and close to the code.</p>
+    </div>
+
+    <h2 class="mt-16">How We Worked Together</h2>
+    <p class="text-14">
+      We designed and built in parallel. I checked TestFlight/staging builds, tuned spacing and tokens on the fly, and left short, clear notes in Figma so no one was blocked across time zones.
+      Tools we used: Figma branches for experiments, TestFlight for checking real interactions, and a simple tracker for what to test next.
+    </p>
+    <p class="pullquote">“Async only works when files explain themselves — short notes beat long docs.”</p>
+
+    <div class="shot-block">
+      <a href="assets/spot-collab-specs.png" class="lightbox" aria-label="Open larger">
+        <img src="assets/spot-collab-specs.png" alt="Handoff examples" class="screenshot">
+      </a>
+      <p class="caption">Handoff that works across time zones — enough context to ship without waiting.</p>
+    </div>
+
+    <h2 class="mt-16">Key Project — Buy Flow & Slippage</h2>
+    <h3>The problem</h3>
+    <p class="text-14">
+      When we looked at the numbers, about <strong>72%</strong> of buy attempts failed — usually because prices moved too quickly or there wasn’t enough liquidity.
+      The app didn’t explain what went wrong at the time, so people tapped “Buy,” saw a generic error, and lost trust.
+    </p>
+    <h3>How pros handle it</h3>
+    <p class="text-14">
+      Experienced traders set a <em>slippage limit</em> — how much the price is allowed to move before the trade cancels. Most everyday users haven’t heard of that.
+    </p>
+    <h3>What we changed</h3>
+    <ul class="list-text">
+      <li><strong>Slippage control:</strong> smart defaults that adjust to market swings, with an option to set it yourself.</li>
+      <li><strong>Live guidance:</strong> show how changes affect your chance of success.</li>
+      <li><strong>Plain English:</strong> “Allow small price changes so your trade goes through.”</li>
+      <li><strong>Faster confirm:</strong> merged review + confirm into one step; fees stayed visible but lower on the screen so people could move quickly.</li>
+    </ul>
+    <h3>The impact</h3>
+    <ul class="list-text">
+      <li>Failed trades ↓ <strong>72% → 26%</strong></li>
+      <li>Average trade time ↓ ~<strong>36%</strong></li>
+      <li>Completion rate ↑ ~<strong>18 percentage points</strong></li>
+    </ul>
+    <p class="pullquote">“We turned a technical idea into something anyone could understand and trust.”</p>
+
+    <div class="shot-block">
+      <a href="assets/spot-failures-before-after-1.png" class="lightbox" aria-label="Open larger">
+        <img src="assets/spot-failures-before-after-1.png" alt="Before/after of buy flow and slippage" class="screenshot">
+      </a>
+      <p class="caption">Before - slower confirmation with more trade failure.</p>
+    </div>
+    <div class="shot-block">
+      <a href="assets/spot-failures-before-after-2.png" class="lightbox" aria-label="Open larger">
+        <img src="assets/spot-failures-before-after-2.png" alt="Before/after of buy flow and slippage" class="screenshot">
+      </a>
+      <p class="caption">Afer - quicker confirmation with slippage control.</p>
+    </div>
+    <h2 class="mt-16">Brand You Can Feel in the Product</h2>
+    <p class="text-14">
+      The same color cues (success, caution, risk), voice, and layout showed up everywhere — app screens, website, emails, and social.
+      I worked with an external website designer and a small marketing team (social + short video) so it all felt like one product.
+    </p>
+    <p class="pullquote">“From a tweet to a trade, it should feel like the same brand.”</p>
+
+    <div class="shot-block">
+      <a href="assets/spot-brand-touchpoints.png" class="lightbox" aria-label="Open larger">
+        <img src="assets/spot-brand-touchpoints.png" alt="App Store, banners, email templates" class="screenshot">
+      </a>
+      <p class="caption">App Store, banners, emails — same cues, same voice.</p>
+    </div>
+
+      <div class="shot-block">
+      <a href="assets/spot-final.png" class="lightbox" aria-label="Open larger">
+        <img src="assets/spot-final.png" alt="App Store, banners, email templates" class="screenshot">
+      </a>
+      <p class="caption">Producton design of Spot Trading.</p>
+    </div>
+
+    <h2 class="mt-16">Results</h2>
+    <ul class="list-text">
+      <li><strong>Better trading:</strong> failed trades ↓ 72% → 26%; trade time ↓ ~36%; completion ↑ ~18%.</li>
+      <li><strong>iOS + Android parity:</strong> React Native rebuild in <strong>16 weeks</strong> using shared logic and simple tokens.</li>
+      <li><strong>Faster releases:</strong> a leaner system cut back-and-forth and made builds more predictable.</li>
+      <li><strong>Consistent feel:</strong> product and brand spoke the same language everywhere.</li>
+    </ul>
+
+    <hr class="muted-hr" />
+
+    <h2 class="mt-0">Reflection</h2>
+    <p class="text-14">
+      Spot taught me how to keep things simple under pressure. Clean up what you have, write things clearly, and work tightly with engineering.
+      Good systems don’t slow teams down — they help everyone move faster with fewer surprises.
+    </p>
+
+    <p class="mt-12"><a href="./index.html" class="text-14">← Back to home</a></p>
+  </main>
+
+  <footer class="container-600 left">
+    <p id="footerText">© 2025. Built with too much coffee ☕ and not enough sleep 😅</p>
+  </footer>
+
+  <div class="page-spacer"></div>
+
+  <!-- Behavior -->
+  <script>
+    (function () {
+      // Theme toggle
+      var btn = document.getElementById('themeToggle');
+      function setTheme(next){
+        var r=document.documentElement;
+        if(next==='dark'){ r.classList.add('dark'); } else { r.classList.remove('dark'); }
+        try{ localStorage.setItem('theme', next); }catch(_){}
+      }
+      if(btn){
+        btn.addEventListener('click', function(){
+          var dark = document.documentElement.classList.contains('dark');
+          setTheme(dark ? 'light' : 'dark');
+        });
+      }
+
+      // Footer fun lines
+      var lines=[
+        "© 2025. Built with too much coffee ☕ and not enough sleep 😅",
+        "© 2025. Made by hand, like sourdough 🍞",
+        "© 2025. Designed in London, debugged everywhere 🌍",
+        "© 2025. Warning: may contain traces of memes 🐸",
+        "© 2025. Crafted with pixels, passion, and a bit of chaos 🎨"
+      ];
+      var ft=document.getElementById('footerText');
+      if(ft){ ft.textContent = lines[Math.floor(Math.random()*lines.length)]; }
+
+      // Close <details> on outside click / Esc
+      function closeOpenDetailsOnClickOutside(e) {
+        document.querySelectorAll('details[open]').forEach(function (d) {
+          if (!d.contains(e.target)) d.removeAttribute('open');
+        });
+      }
+      function closeOpenDetailsOnEscape(e) {
+        if (e.key === 'Escape' || e.key === 'Esc') {
+          document.querySelectorAll('details[open]').forEach(function (d) { d.removeAttribute('open'); });
+        }
+      }
+      document.addEventListener('click', closeOpenDetailsOnClickOutside, { passive: true });
+      document.addEventListener('touchstart', closeOpenDetailsOnClickOutside, { passive: true });
+      document.addEventListener('keydown', closeOpenDetailsOnEscape, { passive: true });
+
+      // Prevent summary click from bubbling
+      document.querySelectorAll('details > summary').forEach(function (s) {
+        s.addEventListener('click', function (ev) { ev.stopPropagation(); });
+      });
+
+      // Lightbox
+      var overlay = document.createElement('div');
+      overlay.className = 'lightbox-overlay';
+      overlay.innerHTML = '<img src="" alt="">';
+      document.body.appendChild(overlay);
+      var img = overlay.querySelector('img');
+
+      function openLightbox(src) { img.src = src; overlay.classList.add('active'); }
+      function closeLightbox() {
+        overlay.classList.add('closing');
+        img.addEventListener('transitionend', function onEnd() {
+          img.removeEventListener('transitionend', onEnd);
+          overlay.classList.remove('active','closing');
+          img.src = '';
+        }, { once: true });
+      }
+      document.querySelectorAll('a.lightbox').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault(); openLightbox(this.href);
+        });
+      });
+      overlay.addEventListener('click', closeLightbox);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLightbox(); });
+    })();
+  </script>
+</body>
+</html>
