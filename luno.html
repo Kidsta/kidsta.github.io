@@ -1,71 +1,60 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Luno - Large Cap Bundle</title>
-  <meta name="description" content="Case study on designing the Large Cap Bundle at Luno.">
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
+  <title>Luno - Crypto bundles made simple</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script>
-    (function () {
-      try {
-        var stored = localStorage.getItem('theme');
-        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var theme = stored !== null ? stored : (prefersDark ? 'dark' : 'light');
-        if (theme === 'dark') document.documentElement.classList.add('dark');
-      } catch (e) {}
-    })();
-  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="assets/favicon.ico">   
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <div class="sidebar-header">
+          <div class="sidebar-logo">
+              <a class="logo-link" href="index.html"><img class="logo-img" src="assets/logo.svg" alt="Nick Pang" /></a>          </div>
+        </div>
 
-  <!-- Floating Sticky Nav (persistent) -->
-  <div class="nav-stick">
-    <div class="container-600 nav-center" style="padding: 0 1rem;">
-      <div class="nav-pill">
-        <!-- Home icon -->
-        <a class="home-btn" href="./index.html" aria-label="Home">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 12l9-9 9 9"></path>
-            <path d="M9 21V9h6v12"></path>
-          </svg>
-        </a>
+        <p class="sidebar-intro">
+Hi, I'm Nick Pang. I specialise in bringing order to complex crypto and trading products. 
+Founding designer at <a href="http://www.spottrading.com" target="_blank">Spot</a> and product designer at <a href="http://www.luno.com" target="_blank">Luno</a> shaping end-to-end user journeys.
+        </p>
 
-        <!-- Projects -->
-        <details>
-          <summary>Projects
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:.7;">
-              <path d="M6 9l6 6 6-6"/>
-            </svg>
-          </summary>
-          <div class="nav-dropdown">
-            <a href="./spot.html"><strong>Spot</strong> - Meme-coin App</a>
-            <a href="./luno.html"><strong>Luno</strong> - Large Cap Bundle</a>
-            <a href="./tradeteq.html"><strong>Tradeteq</strong> - Design System</a>
-          </div>
-        </details>
-        <!-- Theme toggle (single line icon, no border) -->
-        <button id="themeToggle" class="nav-icon-btn" aria-label="Toggle theme" title="Toggle theme (T)">
-          <!-- Sun (outline) -->
-          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="4"></circle>
-            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
-          </svg>
-          <!-- Moon (outline) -->
-          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </button>
+        <nav class="sidebar-nav" aria-label="Primary">
+          <ul>
+            <li><a href="spot.html">Spot</a></li>
+            <li><a href="luno.html" class="is-active">Luno</a></li>
+            <li><a href="tradeteq.html">Tradeteq</a></li>
+            <li>Santander (Updating)</li>
+          </ul>
+        </nav>
+
+        <nav class="sidebar-nav sidebar-nav--secondary" aria-label="Secondary">
+          <ul>
+            <li>
+              <a href="https://www.linkedin.com/in/lightbold/" target="_blank" rel="Linkedin">
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
-    </div>
-  </div>
+    </aside>
 
-  <!-- Case Study Content -->
-  <main class="container-600" style="padding: 5.5rem 1rem 3rem;">
-    <div class="case-logo-wrap">
-      <a class="case-logo" href="./index.html" aria-label="Home">
-<?xml version="1.0" encoding="UTF-8"?>
+    <!-- Main content -->
+    <div class="main">
+      <!-- Top bar icon -->
+      <header class="topbar">
 <svg xmlns:xodm="http://www.corel.com/coreldraw/odm/2003" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 2500 2500" style="enable-background:new 0 0 2500 2500;" xml:space="preserve">
 <style type="text/css">
   .st0{fill:none;}
@@ -84,104 +73,90 @@
   </g>
 </g>
 </svg>
+      </header>
 
-      </a>
+      <main>
+        <!-- Hero image -->
+        <section class="hero-image-block" aria-label="Spot screenshots">
+          <div class="img-placeholder">
+            <img src="assets/luno-hero.jpg" alt="Placeholder image" class="img-fill" />
+          </div>
+        </section>
+
+        <!-- Hero row: title + intro left, empty right -->
+        <section class="section section--hero-row">
+          <div class="hero-left">
+            <h1 class="intro-title">
+              Making crypto investing <br/>feel like an index fund.
+            </h1>
+          </div>
+
+          <div class="hero-right">
+            <!-- Intentionally empty to match visual structure -->
+          </div>
+        </section>
+
+        <!-- Responsibilities row: empty left, content right -->
+    <section class="section section--responsibilities mt-10">
+<div class="two-col two-col--30-70">
+
+        <div>
+          <div class="meta-block">
+            <h2 class="meta-title">Direct responsibilities:</h2>
+            <ul class="meta-list">
+              <li>Senior Product Designer, end-to-end feature design</li>
+            </ul>
+          </div>
+
+          <div class="meta-block pt-4">
+            <h2 class="meta-title">Core work:</h2>
+            <ul class="meta-list">
+              <li>Bundles onboarding, buy and sell journeys and mobile + web implementation within Luno’s existing design system.</li>
+            </ul>
+          </div></div> <!-- left column intentionally empty -->
+
+        <div class="resp-right">
+         <p>
+          At Luno, I led design for the Bundles feature — giving everyday users diversified exposure to 
+          crypto without choosing individual coins or timing the market.</p>
+          <p>The challenge wasn’t the concept, but trust and understanding. Users needed to quickly grasp 
+            what a bundle was, how their money was allocated, and why this approach felt safer than 
+            buying coins one by one. My focus was shaping a clear, transparent experience that balanced 
+            simplicity with the right level of detail.</p>
+        </div>
+      </div>
+    </section>
+
+
+        <!-- Highlights heading -->
+        <section class="section section--highlights-heading mt-22">
+          <h2 class="section-label">At a glance</h2>
+            <div class="text-col">
+                <p><strong>Note:</strong> Due to confidentiality, the full case study isn’t public, but I’m happy to walk through it in conversation.</p>
+</div>
+        </section>
+
+        <!-- Trade highlight -->
+        <section class="section section--highlight" id="trade">
+              <div class="img-placeholder">
+                <img src="assets/luno-bundles.jpg" class="img-fill" alt="" />
+              </div>
+          <div class="highlight-text">
+            <h3 class="highlight-title">How Bundles work</h3>
+            <p class="highlight-caption">
+              The core steps behind investing in a crypto bundle.
+            </p>
+          </div>
+        </section>
+
+
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        © 2025. Warning: may contain traces of memes 🐸
+      </footer>
     </div>
-    <h1>Luno</h1>
-      <p class="light text-14 no-margin">Making crypto investing feel like an index fund.</p>
-      <p class="light text-14 mb-12">2022 - 2023</p>
-
-  <h2>The Challenge</h2>
-  <p class="text-14">
-    I joined as the Large Cap Bundle feature was taking shape in its early phase. The idea was to let customers invest 
-    in a diversified basket of top cryptocurrencies in one click — simple in concept, but harder in practice.
-  </p>
-  <ul class="list-text">
-    <li><strong>User understanding:</strong> Many struggled to grasp what a “bundle” was and how it differed from buying coins individually.</li>
-    <li><strong>Transparency:</strong> Users needed confidence in how their money was being allocated and how weightings worked.</li>
-    <li><strong>Reducing friction:</strong> The flow had to feel easy and familiar, but without oversimplifying or hiding details.</li>
-    <li><strong>My role:</strong> Collaborated with a copywriter, an external UX research agency, and developers to plan research, iterate designs, and build the feature.</li>
-  </ul>
-  <p class="text-14 mt-6 italic">
-<strong>Note:</strong> Due to confidentiality, the full case study isn’t public. I’d be happy to walk through my process 
-    and final designs in a private conversation.
-  </p>
-
-    <p class="mt-12"><a href="./index.html" class="text-14">← Back to home</a></p>
-  </main>
-
-  <footer class="container-600 left">
-    <p id="footerText">© 2025. Built with too much coffee ☕ and not enough sleep 😅</p>
-  </footer>
-
-  <!-- After-footer spacer -->
-  <div class="page-spacer"></div>
-
-<script>
-  (function () {
-    // ===================
-    // Theme toggle
-    // ===================
-    var btn = document.getElementById('themeToggle');
-    function setTheme(next){
-      var r=document.documentElement;
-      if(next==='dark'){ r.classList.add('dark'); } else { r.classList.remove('dark'); }
-      try{ localStorage.setItem('theme', next); }catch(_){}
-    }
-    if(btn){
-      btn.addEventListener('click', function(){
-        var dark = document.documentElement.classList.contains('dark');
-        setTheme(dark ? 'light' : 'dark');
-      });
-    }
-
-    // ===================
-    // Footer fun lines
-    // ===================
-    var lines=[
-      "© 2025. Built with too much coffee ☕ and not enough sleep 😅",
-      "© 2025. Made by hand, like sourdough 🍞",
-      "© 2025. Designed in London, debugged everywhere 🌍",
-      "© 2025. Warning: may contain traces of memes 🐸",
-      "© 2025. Crafted with pixels, passion, and a bit of chaos 🎨"
-    ];
-    var ft=document.getElementById('footerText');
-    if(ft){
-      ft.textContent = lines[Math.floor(Math.random()*lines.length)];
-    }
-
-    // ===================
-    // NEW: Close <details> dropdown on click outside / Escape
-    // ===================
-    function closeOpenDetailsOnClickOutside(e) {
-      var openDetails = document.querySelectorAll('details[open]');
-      openDetails.forEach(function (d) {
-        if (!d.contains(e.target)) {
-          d.removeAttribute('open');
-        }
-      });
-    }
-
-    function closeOpenDetailsOnEscape(e) {
-      if (e.key === 'Escape' || e.key === 'Esc') {
-        document.querySelectorAll('details[open]').forEach(function (d) {
-          d.removeAttribute('open');
-        });
-      }
-    }
-
-    document.addEventListener('click', closeOpenDetailsOnClickOutside, { passive: true });
-    document.addEventListener('touchstart', closeOpenDetailsOnClickOutside, { passive: true });
-    document.addEventListener('keydown', closeOpenDetailsOnEscape, { passive: true });
-
-    // Prevent click on <summary> from bubbling up
-    document.querySelectorAll('details > summary').forEach(function (s) {
-      s.addEventListener('click', function (ev) {
-        ev.stopPropagation();
-      });
-    });
-  })();
-</script>
-
+  </div>
 </body>
 </html>

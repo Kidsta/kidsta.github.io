@@ -1,0 +1,601 @@
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --muted: #777777;
+  --border: #e0e0e0;
+
+  --font-base: "Roboto Slab", system-ui, -apple-system, BlinkMacSystemFont,
+    "SF Pro Text", "Segoe UI", serif;
+  --font-weight: 300;
+
+  /* type scale */
+  --fs-body: 16px;
+  --lh-body: 1.6;
+
+  --fs-hero: 64px;
+  --lh-hero: 1.15;
+
+  --fs-label: 16px;
+  --fs-caption: 12px;
+
+  --fs-quote: 24px;
+  --lh-quote: 1.4;
+
+  /* spacing scale (4pt) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-18: 72px;
+  --space-22: 96px; 
+  --space-30: 120px; 
+
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-base);
+  font-weight: var(--font-weight);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Layout */
+
+.layout {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 400px 1fr; /* wider sidebar */
+  column-gap: 96px;      
+}
+
+/* Sidebar */
+
+.sidebar {
+  padding: 24px 20px;
+
+}
+
+.sidebar-inner {
+  position: sticky;
+  top: 24px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.sidebar-logo {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+.sidebar-logo-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.sidebar-name {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.sidebar-intro {
+  font-size: 16px;
+  line-height: 1.;
+  color: var(--text);
+  margin: 0 0 20px;
+}
+.sidebar-intro a {
+  color: #000;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.sidebar-nav {
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li + li {
+  margin-top: 6px;
+}
+
+.sidebar-nav a {
+  font-size: 16px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.sidebar-nav a:hover {
+  color: var(--text);
+}
+
+.sidebar-nav a.is-active {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.sidebar-nav--secondary {
+  margin-top: 24px;
+}
+
+/* Main */
+
+.main {
+  padding: 24px 40px 32px 0; /* no left padding; gap handled by grid */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top bar */
+
+.topbar {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 24px;
+}
+
+.topbar-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid var(--text);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.topbar-icon span {
+  width: 14px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--text);
+}
+/* Logo image (non-SVG) */
+.logo-img {
+  height: 48px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+.company-img {
+  height: 24px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Optional: if the logo sits inside a clickable link */
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+}
+/* Generic sections */
+
+.section {
+  margin-bottom: 24px;
+}
+
+.section:last-of-type {
+  margin-bottom: 48px;
+}
+
+/* Hero image */
+
+.hero-image-block {
+  margin-bottom: 40px;
+}
+
+.block-placeholder {
+  background: #dedede;
+  padding: 40px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.block-placeholder--hero {
+  min-height: 220px;
+}
+
+.block-placeholder span {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #666666;
+}
+
+/* HERO ROW: title + intro text left, empty right */
+
+.section--hero-row {
+.section--hero-row {
+  margin-left: 0;
+  margin-right: -40px; /* cancels the padding-right of .main */
+}
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.intro-title {
+  font-size: var(--fs-hero);
+  line-height: var(--lh-hero);
+  margin: 0;
+  font-weight: 600;
+}
+
+.intro-subtext {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+  max-width: 700px;
+  margin: 0;
+  color: #333333;
+}
+.img-placeholder {
+  width: 100%;
+  background: #dedede;
+  overflow: hidden;
+}
+
+.img-fill {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.list-text {
+  list-style-type: disc;
+  list-style-position: outside;
+  padding-left: 1.25rem;  /* space for bullets */
+  margin: 0.5rem 0;
+}
+
+.list-text li {
+  margin-bottom: 0.5rem; /* spacing between items */
+  color: inherit;        /* follows text color (light/dark mode) */
+}
+
+.list-text li strong {
+  font-weight: 600;      /* make labels stand out */
+}
+/* RESPONSIBILITIES ROW (reuse two-col, empty left) */
+
+
+.section--responsibilities .resp-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.meta-title {
+  font-size: 16px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.meta-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* Role + problem */
+
+.section--role p {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  margin: 0;
+}
+
+/* Base */
+.two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 32px;
+}
+
+/* Presets (apply per section/page) */
+.two-col--60-40 { grid-template-columns: 60% 40%; }
+.two-col--40-60 { grid-template-columns: 40% 60%; }
+.two-col--70-30 { grid-template-columns: 70% 30%; }
+.two-col--30-70 { grid-template-columns: 30% 70%; }
+
+/* Fixed left rail + flexible right (good for captions / meta blocks) */
+.two-col--rail-360 { grid-template-columns: 360px 1fr; }
+.two-col--rail-440 { grid-template-columns: 440px 1fr; }
+.two-col--rail-520 { grid-template-columns: 520px 1fr; }
+
+/* Wider gap variant (if needed) */
+.two-col--gap-64 { gap: 64px; }
+.two-col--gap-96 { gap: 96px; }
+
+
+/* Three-column layout */
+.three-col {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.three-col-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Optional caption style */
+.three-col-caption {
+  font-size: 14px;
+  line-height: 1.3;
+  color: var(--text-secondary, #000);
+  max-width: 90%;
+}
+
+.section-heading {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+/* Quotes */
+
+.section--quotes {
+  margin-top: 16px;
+}
+
+.quotes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+
+/* Quote container */
+.quote {
+  margin: 0;
+  padding-left: 20px;
+  border-left: 2px solid #DBE4EE;
+}
+
+/* Quote text */
+.quote blockquote {
+  margin: 0 0 8px;
+  font-size: 20px; /* stronger presence */
+  line-height: 1.4;
+  font-weight: 500;
+  max-width: 42ch;
+}
+
+/* Caption */
+.quote figcaption {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+
+/* Section label */
+
+.section-label {
+  font-size: var(--fs-label);
+  margin: 0 0 8px;
+}
+
+/* Highlights */
+
+.section--highlights-heading {
+  margin-top: 8px;
+}
+
+.section--highlight {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section--highlight + .section--highlight {
+  margin-top: 24px;
+}
+
+.highlight-text {
+  margin-top: 8px;
+}
+
+.highlight-title {
+  font-size: 16px;
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+.highlight-caption {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+  max-width: 50%;
+}
+
+/* Outcome */
+
+.section--outcome p {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  margin: 0;
+}
+
+/* Footer */
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  margin-top: auto;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Simple spacing utilities */
+
+.m-0   { margin: 0 !important; }
+.mt-4  { margin-top: var(--space-4) !important; }
+.mt-8  { margin-top: var(--space-8) !important; }
+.mt-10 { margin-top: var(--space-10) !important; }
+.mt-18 { margin-top: var(--space-18) !important; }
+.mt-22 { margin-top: var(--space-22) !important; }
+.mt-30 { margin-top: var(--space-30) !important; }
+
+
+.mb-4  { margin-bottom: var(--space-4) !important; }
+.mb-8  { margin-bottom: var(--space-8) !important; }
+.mb-12 { margin-bottom: var(--space-12) !important; }
+
+.p-0   { padding: 0 !important; }
+.pt-4  { padding-top: var(--space-4) !important; }
+.pt-8 { padding-top: var(--space-8) !important; }
+.pt-12 { padding-top: var(--space-12) !important; }
+.pt-18 { padding-top: var(--space-18) !important; }
+.pb-4  { padding-bottom: var(--space-4) !important; }
+.pb-8  { padding-bottom: var(--space-8) !important; }
+.pb-18  { padding-bottom: var(--space-8) !important; }
+
+
+
+
+/* ---------- RESPONSIVE LAYOUT ---------- */
+
+/* gap scaling on larger screens */
+@media (min-width: 1280px) {
+  .layout {
+    column-gap: 40px;
+    
+  }
+}
+
+@media (min-width: 1600px) {
+  .layout {
+  grid-template-columns: 440px 1fr; /* wider sidebar */
+    column-gap: 96px;
+  }
+}
+
+/* mobile / tablet */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+
+  .sidebar {
+    padding: 20px 16px 16px;
+  }
+
+  .sidebar-inner {
+    position: static;
+  }
+
+  .main {
+    padding: 20px 16px 28px;
+  }
+
+  .hero-image-block {
+    margin-bottom: 28px;
+  }
+
+  .section--hero-row,
+  .section--responsibilities .two-col,
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+  .three-col {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .three-col-caption {
+    max-width: 100%;
+  }
+ .quotes-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .quote blockquote {
+    font-size: 18px;
+    max-width: 100%;
+  }
+
+  .quote {
+    padding-left: 16px;
+    border-left-width: 2px;
+  }
+  
+
+  .intro-title {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .intro-subtext {
+    font-size: 15px;
+  }
+  .highlight-caption {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .block-placeholder--hero {
+    min-height: 180px;
+  }
+
+}
